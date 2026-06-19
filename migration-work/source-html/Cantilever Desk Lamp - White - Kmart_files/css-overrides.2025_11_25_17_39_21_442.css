@@ -1,0 +1,82 @@
+div#reviews-and-ratings {
+    max-width: 700px !important;
+}
+
+.yotpo-sr-star-full, .yotpo-sr-star-empty, .yotpo-sr-star-half{
+transform: scale(1,1)
+}
+.yotpo-review-rating-title{
+flex-direction: column !important;
+}
+.yotpo-review-title{
+margin-top:10px;
+  margin-left:0 !important;
+}
+.yotpo-head{
+display: none !important;
+}
+.yotpo-review{margin-top:24px !important; margin-bottom: 24px !important;}
+.yotpo-new-review-btn-wrapper{
+display:none !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .yotpo-star-distribution{
+  padding-inline-end:14px !important;
+    padding-left:18px !important;
+  }
+.yotpo-review-right-panel{
+display:flex;
+  flex-direction: column-reverse;
+  min-width:130px !important;
+}
+.yotpo-review-details{
+justify-content: flex-start !important;
+}
+.yotpo-review-left-panel{
+min-width:155px !important;
+}
+  .yotpo-bottom-line-question-wrapper-vertical{
+  border-right: 0 !important;
+  }
+  
+  .yotpo-layout-header-wrapper{margin-bottom: 24px !important;}
+  .yotpo-filters-container{margin-top: 24px !important;}
+  
+  .yotpo-base-layout{width: 100% !important;}
+  .yotpo-bottom-line{margin-right: 0 !important;}
+  .yotpo-bottom-line-right-panel{padding-right: 24px !important;}
+  
+  @supports (hanging-punctuation: first) and (font: -apple-system-body) and
+    (-webkit-appearance: none) {
+    .yotpo-widget-instance {
+      width: -webkit-min-content;
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+.yotpo-custom-questions-range-question-wrapper, .yotpo-review-content{
+margin-bottom: 5px !important;
+  
+  }
+  
+   .yotpo-custom-questions-range-question{gap:6px !important;}
+  .yotpo-layout-header-wrapper{margin-bottom:0 !important;}
+  .yotpo-bottom-line-summary{margin-top: 0 !important;}
+  .yotpo-review-question-wrapper{padding: 0 !important;}
+  .yotpo-bottom-line-question-wrapper-horizontal {padding: 0 !important;}
+  .yotpo-review-content{margin-top: 0 !important;}
+  
+
+  }
+nav.yotpo-reviews-pagination-container {
+    margin-bottom: unset !important;
+    margin-top: unset !important;
+}
+.yotpo-review-border-smooth {
+    height: unset !important;
+}
