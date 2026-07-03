@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/stevie-2-drawer-desk-sage-43684298/",
+  "path": "product/stevie-2-drawer-desk-sage-43684298",
+  "timestamp": "2026-07-03T02:14:47.834Z",
+  "title": "Stevie 2 Drawer Desk - Sage - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

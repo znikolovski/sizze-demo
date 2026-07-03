@@ -1,0 +1,42 @@
+{
+  "variantName": "cards-listing",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-19T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.kmart.com.au/collection/eofy-marketplace/",
+    "originPage": "EOFY Marketplace collection / product listing page (PLP)",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "product-listing",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "toolbar (filter + marketplace toggle + result count + sort) + responsive product grid (image + status/seller badges + online-only flag + title + price + add-to-bag, one interspersed promo tile) + pagination",
+    "buttonCount": 0,
+    "imageCount": 60,
+    "perTile": "image + optional status badge (Trending Now / Clearance) + seller badge (Marketplace / Officeworks / Multiple sellers / Kmart) + 'Online only' flag + title + price (optional was/strike) + Add-to-bag",
+    "dataSource": "Adobe Commerce / graphql catalog API (runtime-populated)",
+    "interspersedPromo": "OnePass promo tile at grid index 7"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product listing / category (PLP) pages",
+      "collection pages with a filterable, sortable, paginated product grid",
+      "search results grids with result count + toolbar + pagination"
+    ],
+    "notSuitableFor": [
+      "static category/feature tile grids without filter/sort/pagination (use cards-product)",
+      "horizontally scrolling product rails (use carousel-rail)",
+      "single promo banners (use hero-promo)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/collection/eofy-marketplace/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-19T00:00:00.000Z"
+  }
+}

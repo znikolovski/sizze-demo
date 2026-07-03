@@ -115,7 +115,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -141,12 +141,25 @@ export default async function decorate(block) {
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
+      // click toggles the panel (used on mobile + as a fallback on desktop)
+      navSection.addEventListener('click', (e) => {
         if (isDesktop.matches) {
+          // let direct link clicks navigate; only toggle when clicking the row chrome
+          if (e.target.closest('ul')) return;
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
           toggleAllNavSections(navSections);
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         }
+      });
+      // desktop: open the mega-menu on hover, close on leave
+      navSection.addEventListener('mouseenter', () => {
+        if (isDesktop.matches && navSection.classList.contains('nav-drop')) {
+          toggleAllNavSections(navSections);
+          navSection.setAttribute('aria-expanded', 'true');
+        }
+      });
+      navSection.addEventListener('mouseleave', () => {
+        if (isDesktop.matches) navSection.setAttribute('aria-expanded', 'false');
       });
     });
   }

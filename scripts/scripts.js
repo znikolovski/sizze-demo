@@ -13,6 +13,21 @@ import {
 } from './aem.js';
 
 /**
+ * No-op authoring-instrumentation helper. Universal Editor instrumentation is not
+ * used in this document-authored (da) project, so block code that calls this can
+ * run unchanged.
+ */
+export function moveInstrumentation() {}
+
+/**
+ * Minimal placeholders fetcher. Blocks read keys off the returned object and supply
+ * their own fallbacks, so an empty object is sufficient for this project.
+ */
+export async function fetchPlaceholders() {
+  return {};
+}
+
+/**
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {

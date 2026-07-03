@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/alfordson-mesh-office-chair-executive-seat-tilt-fabric-gaming-racing-computer-white-grey-110049636/",
+  "path": "product/alfordson-mesh-office-chair-executive-seat-tilt-fabric-gaming-racing-computer-white-grey-110049636",
+  "timestamp": "2026-07-03T02:15:27.996Z",
+  "title": "Alfordson Mesh Office Chair Executive Seat Tilt Fabric Gaming Racing Computer - White Grey - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

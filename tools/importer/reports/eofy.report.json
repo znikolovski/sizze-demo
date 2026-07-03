@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/eofy/",
+  "path": "eofy",
+  "timestamp": "2026-07-03T02:14:33.350Z",
+  "title": "Shop EOFY Products on Kmart, Target & Marketplace",
+  "template": "eofy-landing",
+  "blocks": [
+    "hero-promo",
+    "hero-promo",
+    "hero-promo",
+    "hero-promo",
+    "carousel-rail",
+    "cards-product",
+    "cards-product",
+    "cards-product",
+    "cards-product"
+  ]
+}

@@ -1,0 +1,45 @@
+/* columns-promo — horizontal promo/utility strips (postcode banner, Kmail signup) */
+.columns-promo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.columns-promo > div > div {
+  margin: 0;
+}
+
+.columns-promo img {
+  width: auto;
+  max-height: 40px;
+}
+
+.columns-promo p {
+  margin: 0;
+}
+
+.columns-promo a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* inside a dark section the strip text is white (inherited); CTA stands out */
+.section.dark .columns-promo a.button,
+.section.dark .columns-promo a:only-child {
+  text-decoration: none;
+}
+
+@media (width >= 768px) {
+  .columns-promo > div {
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .columns-promo > div > div {
+    flex: 0 1 auto;
+  }
+}

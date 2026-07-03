@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/kodu-desk-study-table-2-doors-120w-black-110150018/",
+  "path": "product/kodu-desk-study-table-2-doors-120w-black-110150018",
+  "timestamp": "2026-07-03T02:14:57.959Z",
+  "title": "Kodu Desk Study Table 2 Doors 120W - Black - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/anais-table-lamp-43150717/",
+  "path": "product/anais-table-lamp-43150717",
+  "timestamp": "2026-07-03T02:15:45.199Z",
+  "title": "Anais Table Lamp - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

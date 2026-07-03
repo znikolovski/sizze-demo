@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.kmart.com.au/"
+      ],
+      "representativeUrl": "https://www.kmart.com.au/",
+      "coverageGaps": [],
+      "description": "Homepage with postcode banner, header nav, carousel-driven content (hero carousel, themed categories, product carousels, trending tiles, buying assistance), community photos and footer.",
+      "blocks": [
+        {
+          "name": "columns-promo",
+          "instances": [
+            "div.PostcodeBannerstyled__Banner-sc-1sbcumy-0"
+          ]
+        },
+        {
+          "name": "hero-promo",
+          "instances": [
+            "section.half-banner"
+          ]
+        },
+        {
+          "name": "carousel-rail",
+          "instances": [
+            "section.product-carousel"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            "section.category-tiles"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec-postcode",
+          "name": "Postcode banner",
+          "selector": "div.PostcodeBannerstyled__Banner-sc-1sbcumy-0",
+          "style": "dark",
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "eofy-landing",
+      "urls": [
+        "https://www.kmart.com.au/eofy/"
+      ],
+      "representativeUrl": "https://www.kmart.com.au/eofy/",
+      "coverageGaps": [],
+      "description": "EOFY campaign landing page with banner hero, promotional category tiles and footer.",
+      "blocks": [
+        {
+          "name": "hero-promo",
+          "instances": [
+            "section.half-banner"
+          ]
+        },
+        {
+          "name": "carousel-rail",
+          "instances": [
+            "section.product-carousel"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            "section.mosaic-categories",
+            "section.category-tiles"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec-eofy-content",
+          "name": "EOFY content",
+          "selector": "#__next > div.Layoutstyled-sc-111fio1-0.dfUnQl > div.Sectionstyled__StyledBox-sc-fe2iw2-1.fuKEFf",
+          "style": null,
+          "blocks": [
+            "hero-promo",
+            "carousel-rail",
+            "cards-product"
+          ],
+          "defaultContent": [
+            "main.eofy-content > h1"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "collection-page",
+      "urls": [
+        "https://www.kmart.com.au/collection/eofy-marketplace/"
+      ],
+      "representativeUrl": "https://www.kmart.com.au/collection/eofy-marketplace/",
+      "coverageGaps": [],
+      "description": "Product listing/collection page with breadcrumbs, title/description, filter and sort controls, paginated product grid and footer.",
+      "blocks": [
+        {
+          "name": "cards-listing",
+          "instances": [
+            "main div[data-testid=\"plp-result\"]",
+            "#mainContent-discovery-ui"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec-plp-header",
+          "name": "Listing header",
+          "selector": "#__next > div > main > div.full-bleed",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "main nav[aria-label=\"Breadcrumbs\"]",
+            "main div[data-testid=\"plp-header\"]"
+          ]
+        },
+        {
+          "id": "sec-plp-result",
+          "name": "Product listing",
+          "selector": "#mainContent-discovery-ui",
+          "style": null,
+          "blocks": [
+            "cards-listing"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "product-page",
+      "urls": [
+        "https://www.kmart.com.au/product/larvik-1200mm-2-drawer-desk-oakwhite-desks-tables-and-workstations-110068089/",
+        "https://www.kmart.com.au/product/stevie-2-drawer-desk-sage-43684298/",
+        "https://www.kmart.com.au/product/wharf-2-drawer-desk-43633012/",
+        "https://www.kmart.com.au/product/kodu-desk-study-table-2-doors-120w-black-110150018/",
+        "https://www.kmart.com.au/product/studymate-vinci-2-drawer-desk-oak-and-white-desks-tables-and-workstations-110068042/",
+        "https://www.kmart.com.au/product/advwin-armless-cross-legged-office-chair-swivel-vanity-chair-beige-110011130/",
+        "https://www.kmart.com.au/product/boucle-home-office-chair-43228386/",
+        "https://www.kmart.com.au/product/artiss-massage-office-chair-executive-computer-gaming-chairs-pu-leather-brown-110063816/",
+        "https://www.kmart.com.au/product/alfordson-boucle-office-chair-computer-swivel-armchair-work-adult-kids-green-110077843/",
+        "https://www.kmart.com.au/product/alfordson-mesh-office-chair-executive-seat-tilt-fabric-gaming-racing-computer-white-grey-110049636/",
+        "https://www.kmart.com.au/product/desk-lamp-black-43573400/",
+        "https://www.kmart.com.au/product/cantilever-desk-lamp-white-43029174/",
+        "https://www.kmart.com.au/product/anais-table-lamp-43150717/",
+        "https://www.kmart.com.au/product/amiri-portable-rechargeable-lamp-43455706/",
+        "https://www.kmart.com.au/product/nico-portable-rechargeable-lamp-olive-43556281/"
+      ],
+      "representativeUrl": "https://www.kmart.com.au/product/larvik-1200mm-2-drawer-desk-oakwhite-desks-tables-and-workstations-110068089/",
+      "coverageGaps": [],
+      "description": "Product detail page (PDP) with image gallery, product title/price, buy box, variant selectors, description, specifications and related products. Grouped by URL pattern (live pages blocked by bot protection).",
+      "blocks": [
+        {
+          "name": "product-gallery",
+          "instances": [
+            "section.product-gallery"
+          ]
+        },
+        {
+          "name": "product-buybox",
+          "instances": [
+            "section.product-buybox"
+          ]
+        },
+        {
+          "name": "accordion-product",
+          "instances": [
+            "section.product-description",
+            "section.product-delivery",
+            "section.product-reviews"
+          ]
+        },
+        {
+          "name": "carousel-rail",
+          "instances": [
+            "section.related-products"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec-breadcrumbs",
+          "name": "Breadcrumbs",
+          "selector": "nav.breadcrumbs",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "nav.breadcrumbs"
+          ]
+        },
+        {
+          "id": "sec-product-detail",
+          "name": "Product detail",
+          "selector": "#mainContent-discovery-ui",
+          "style": null,
+          "blocks": [
+            "product-gallery",
+            "product-buybox",
+            "accordion-product"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "sec-related",
+          "name": "Related products",
+          "selector": "section.related-products",
+          "style": null,
+          "blocks": [
+            "carousel-rail"
+          ],
+          "defaultContent": [
+            "section.related-products > h2"
+          ]
+        }
+      ]
+    }
+  ]
+}

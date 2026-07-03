@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/wharf-2-drawer-desk-43633012/",
+  "path": "product/wharf-2-drawer-desk-43633012",
+  "timestamp": "2026-07-03T02:14:53.275Z",
+  "title": "Wharf 2 Drawer Desk - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

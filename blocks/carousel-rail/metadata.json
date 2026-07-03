@@ -1,0 +1,43 @@
+{
+  "variantName": "carousel-rail",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-06-19T00:15:18.253Z",
+  "sourceContext": {
+    "originUrl": "https://www.kmart.com.au/",
+    "originPage": "Kmart homepage carousels (roundel category rail, EOFY hero carousel, community photo slider, online-exclusive product rail)",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "colored",
+    "density": "wide",
+    "purpose": "product-rail",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + optional heading/desc/CTA per slide",
+    "buttonCount": 0,
+    "imageCount": 16
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "category roundels",
+      "hero slide rotators",
+      "product rails",
+      "UGC photo sliders"
+    ],
+    "notSuitableFor": [
+      "static single banner (use hero)",
+      "non-rotating grids (use cards)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/index",
+      "/eofy/index",
+      "/product/larvik-1200mm-2-drawer-desk-oakwhite-desks-tables-and-workstations-110068089/index"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-06-19T01:02:30.000Z"
+  }
+}

@@ -1,0 +1,140 @@
+/* product-gallery — large main image with a thumbnail strip below */
+.product-gallery .product-gallery-slides-container {
+  position: relative;
+}
+
+.product-gallery .product-gallery-slides,
+.product-gallery .product-gallery-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-gallery .product-gallery-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.product-gallery .product-gallery-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.product-gallery .product-gallery-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+/* main image area — fixed square-ish viewport, image contained */
+.product-gallery .product-gallery-slide .product-gallery-slide-image {
+  width: 100%;
+}
+
+.product-gallery .product-gallery-slide .product-gallery-slide-image picture {
+  display: block;
+}
+
+.product-gallery .product-gallery-slide .product-gallery-slide-image img {
+  display: block;
+  width: 100%;
+  height: 460px;
+  object-fit: contain;
+  background-color: var(--kmart-grey);
+  border-radius: 8px;
+}
+
+/* any text content overlaid in a gallery slide is hidden (gallery is images only) */
+.product-gallery .product-gallery-slide .product-gallery-slide-content {
+  display: none;
+}
+
+/* indicators rendered as a horizontal thumbnail strip */
+.product-gallery .product-gallery-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0 0;
+  line-height: 0;
+}
+
+.product-gallery .product-gallery-slide-indicator button {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--kmart-border);
+  background-color: #fff;
+  transition: background-color 0.2s;
+}
+
+.product-gallery .product-gallery-slide-indicator button:disabled,
+.product-gallery .product-gallery-slide-indicator button:hover,
+.product-gallery .product-gallery-slide-indicator button:focus-visible {
+  background-color: var(--kmart-navy);
+  border-color: var(--kmart-navy);
+}
+
+/* prev/next arrows */
+.product-gallery .product-gallery-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.product-gallery .product-gallery-navigation-buttons button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
+  pointer-events: auto;
+  transition: background-color 0.2s;
+}
+
+.product-gallery .product-gallery-navigation-buttons button:hover,
+.product-gallery .product-gallery-navigation-buttons button:focus-visible {
+  background-color: var(--kmart-grey);
+}
+
+.product-gallery .product-gallery-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--kmart-navy);
+  border-bottom: 0;
+  border-left: 0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.product-gallery .product-gallery-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+@media (width >= 900px) {
+  .product-gallery .product-gallery-slide .product-gallery-slide-image img {
+    height: 560px;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/amiri-portable-rechargeable-lamp-43455706/",
+  "path": "product/amiri-portable-rechargeable-lamp-43455706",
+  "timestamp": "2026-07-03T02:15:52.109Z",
+  "title": "Amiri Portable Rechargeable Lamp - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

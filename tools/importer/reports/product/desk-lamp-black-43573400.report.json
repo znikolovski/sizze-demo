@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/desk-lamp-black-43573400/",
+  "path": "product/desk-lamp-black-43573400",
+  "timestamp": "2026-07-03T02:15:33.306Z",
+  "title": "Desk Lamp - Black - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

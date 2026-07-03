@@ -1,0 +1,10 @@
+{
+  "sites": {
+    "sizze-demo": {
+      "previewOrg": "znikolovski",
+      "previewSite": "sizze-demo",
+      "contentHostUrl": "https://content.da.live/znikolovski/sizze-demo/"
+    }
+  },
+  "type": "da"
+}

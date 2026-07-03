@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-trending",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-06-19T00:15:18.253Z",
+  "sourceContext": {
+    "originUrl": "https://www.kmart.com.au/",
+    "originPage": "Kmart homepage Top picks tabbed product carousels",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "feature",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "tab label + panel content per tab",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "trending product tab switchers",
+      "labeled content panels"
+    ],
+    "notSuitableFor": [
+      "FAQ accordions",
+      "single panel content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-19T00:15:18.253Z"
+  }
+}

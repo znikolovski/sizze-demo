@@ -1,0 +1,128 @@
+/* hero-promo — Kmart "half-banner": image beside heading/description/CTA */
+.hero-promo-container .hero-promo-wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-promo {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--kmart-grey);
+  min-height: 220px;
+}
+
+.hero-promo > div {
+  margin: 0;
+}
+
+/* image side */
+.hero-promo picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-promo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* text side */
+.hero-promo > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 28px 32px;
+}
+
+.hero-promo h2,
+.hero-promo h3 {
+  margin: 0;
+  font-size: var(--heading-font-size-l);
+  color: var(--kmart-navy);
+}
+
+.hero-promo p {
+  margin: 0;
+  color: var(--kmart-navy);
+  font-size: var(--body-font-size-s);
+  line-height: 1.4;
+}
+
+.hero-promo a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 22px;
+  border-radius: 24px;
+  background-color: var(--kmart-navy);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.hero-promo a:hover {
+  background-color: #1a2a36;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (width >= 768px) {
+  .hero-promo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============ onepass variant: purple "Supercharge your shop" banner ============ */
+.hero-promo.onepass {
+  background: linear-gradient(90deg, #6f27f6, #9900f1);
+  border-radius: 12px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.hero-promo.onepass img {
+  object-fit: contain;
+  max-height: 120px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.hero-promo.onepass > div:last-child {
+  align-items: center;
+  text-align: center;
+}
+
+.hero-promo.onepass h2,
+.hero-promo.onepass h3,
+.hero-promo.onepass p {
+  color: #fff;
+}
+
+.hero-promo.onepass a {
+  background-color: #fff;
+  color: #6f27f6;
+}
+
+.hero-promo.onepass a:hover {
+  background-color: #f0f0f0;
+  color: #6f27f6;
+}
+
+@media (width >= 768px) {
+  .hero-promo.onepass {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .hero-promo.onepass > div:last-child {
+    text-align: left;
+    align-items: flex-start;
+  }
+}

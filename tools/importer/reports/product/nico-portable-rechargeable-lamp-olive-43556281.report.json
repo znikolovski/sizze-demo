@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/nico-portable-rechargeable-lamp-olive-43556281/",
+  "path": "product/nico-portable-rechargeable-lamp-olive-43556281",
+  "timestamp": "2026-07-03T02:16:00.749Z",
+  "title": "Nico Portable Rechargeable Lamp - Olive - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

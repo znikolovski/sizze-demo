@@ -1,0 +1,286 @@
+/* carousel-rail — Kmart horizontal product rail (many tiles visible, scroll/snap) */
+.carousel-rail {
+  position: relative;
+}
+
+.carousel-rail .carousel-rail-slides-container {
+  position: relative;
+}
+
+.carousel-rail .carousel-rail-slides,
+.carousel-rail .carousel-rail-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-rail .carousel-rail-slides {
+  display: flex;
+  gap: 16px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0 12px;
+}
+
+.carousel-rail .carousel-rail-slides::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel-rail .carousel-rail-slides::-webkit-scrollbar-thumb {
+  background-color: var(--kmart-border);
+  border-radius: 3px;
+}
+
+/* each tile: fixed narrow width, stacked image over text */
+.carousel-rail .carousel-rail-slide {
+  flex: 0 0 auto;
+  width: 160px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 0;
+  position: relative;
+}
+
+.carousel-rail .carousel-rail-slide .carousel-rail-slide-image picture {
+  position: static;
+  display: block;
+}
+
+.carousel-rail .carousel-rail-slide .carousel-rail-slide-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: var(--kmart-grey);
+  border-radius: 8px;
+}
+
+.carousel-rail .carousel-rail-slide .carousel-rail-slide-content {
+  position: static;
+  z-index: auto;
+  margin: 0;
+  padding: 8px 4px 0;
+  background: none;
+  color: var(--kmart-navy);
+  width: auto;
+}
+
+.carousel-rail .carousel-rail-slide-content h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.carousel-rail .carousel-rail-slide-content h3 a {
+  color: var(--kmart-navy);
+  text-decoration: none;
+}
+
+.carousel-rail .carousel-rail-slide-content h3 a:hover {
+  text-decoration: underline;
+}
+
+.carousel-rail .carousel-rail-slide-content p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* price emphasised, seller/rating muted */
+.carousel-rail .carousel-rail-slide-content p:nth-of-type(1) {
+  color: #6a7783;
+  font-size: 12px;
+}
+
+.carousel-rail .carousel-rail-slide-content p:nth-of-type(2) {
+  color: var(--kmart-navy);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* slide indicators hidden for a scrolling rail */
+.carousel-rail .carousel-rail-slide-indicators {
+  display: none;
+}
+
+/* navigation arrows */
+.carousel-rail .carousel-rail-navigation-buttons {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.carousel-rail .carousel-rail-navigation-buttons button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 18%);
+  pointer-events: auto;
+  transition: background-color 0.2s;
+}
+
+.carousel-rail .carousel-rail-navigation-buttons button:hover,
+.carousel-rail .carousel-rail-navigation-buttons button:focus-visible {
+  background-color: var(--kmart-grey);
+}
+
+.carousel-rail .carousel-rail-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--kmart-navy);
+  border-bottom: 0;
+  border-left: 0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-rail .carousel-rail-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+@media (width >= 900px) {
+  .carousel-rail .carousel-rail-slide {
+    width: 200px;
+  }
+}
+
+/* ============ hero variant: full-width banner carousel ============ */
+.carousel-rail.hero .carousel-rail-slides {
+  gap: 0;
+  overflow: hidden;
+}
+
+.carousel-rail.hero .carousel-rail-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+/* image fills the slide */
+.carousel-rail.hero .carousel-rail-slide .carousel-rail-slide-image {
+  width: 100%;
+}
+
+.carousel-rail.hero .carousel-rail-slide .carousel-rail-slide-image picture,
+.carousel-rail.hero .carousel-rail-slide .carousel-rail-slide-image img {
+  display: block;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 0;
+  background-color: var(--kmart-grey);
+}
+
+/* content overlaid on the left of the image */
+.carousel-rail.hero .carousel-rail-slide .carousel-rail-slide-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 46%;
+  margin: 0;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  background: none;
+  color: #fff;
+  z-index: 1;
+}
+
+.carousel-rail.hero .carousel-rail-slide-content h3 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 35%);
+  display: block;
+  -webkit-line-clamp: unset;
+}
+
+.carousel-rail.hero .carousel-rail-slide-content h3 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.carousel-rail.hero .carousel-rail-slide-content p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+  text-shadow: 0 1px 6px rgb(0 0 0 / 35%);
+  max-width: 90%;
+}
+
+/* last paragraph = CTA, render as a navy pill */
+.carousel-rail.hero .carousel-rail-slide-content p:last-child {
+  align-self: flex-start;
+  padding: 12px 26px;
+  border-radius: 26px;
+  background-color: var(--kmart-navy);
+  font-weight: 700;
+  text-shadow: none;
+}
+
+/* hero arrows centred vertically, indicators visible */
+.carousel-rail.hero .carousel-rail-navigation-buttons {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-rail.hero .carousel-rail-slide-indicators {
+  display: flex;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+}
+
+.carousel-rail.hero .carousel-rail-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  background-color: rgb(255 255 255 / 60%);
+}
+
+.carousel-rail.hero .carousel-rail-slide-indicator button:hover,
+.carousel-rail.hero .carousel-rail-slide-indicator button:disabled {
+  background-color: #fff;
+}
+
+@media (width >= 900px) {
+  .carousel-rail.hero .carousel-rail-slide img {
+    height: 460px;
+  }
+
+  .carousel-rail.hero .carousel-rail-slide .name {
+    font-size: 48px;
+  }
+}

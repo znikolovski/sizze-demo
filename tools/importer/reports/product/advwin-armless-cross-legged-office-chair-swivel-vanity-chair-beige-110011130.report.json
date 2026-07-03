@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/advwin-armless-cross-legged-office-chair-swivel-vanity-chair-beige-110011130/",
+  "path": "product/advwin-armless-cross-legged-office-chair-swivel-vanity-chair-beige-110011130",
+  "timestamp": "2026-07-03T02:15:08.890Z",
+  "title": "Advwin Armless Cross-Legged Office Chair Swivel Vanity Chair Beige - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

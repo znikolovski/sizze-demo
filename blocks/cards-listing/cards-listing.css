@@ -1,0 +1,92 @@
+/* cards-listing — Kmart product listing (PLP) grid */
+.cards-listing > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cards-listing > ul > li {
+  border: 1px solid var(--kmart-border);
+  border-radius: 10px;
+  background-color: var(--background-color);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+
+.cards-listing > ul > li:hover {
+  box-shadow: 0 4px 14px rgb(0 0 0 / 10%);
+}
+
+.cards-listing .cards-listing-card-image {
+  line-height: 0;
+}
+
+.cards-listing > ul > li img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: var(--kmart-grey);
+}
+
+.cards-listing .cards-listing-card-body {
+  margin: 0;
+  padding: 12px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cards-listing .cards-listing-card-body h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--kmart-navy);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cards-listing .cards-listing-card-body h3 a {
+  color: var(--kmart-navy);
+  text-decoration: none;
+}
+
+.cards-listing .cards-listing-card-body h3 a:hover {
+  text-decoration: underline;
+}
+
+/* price prominent */
+.cards-listing .cards-listing-card-body p:nth-of-type(1) {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--kmart-navy);
+}
+
+/* rating muted */
+.cards-listing .cards-listing-card-body p:nth-of-type(2) {
+  margin: 0;
+  font-size: 12px;
+  color: #6a7783;
+}
+
+@media (width >= 600px) {
+  .cards-listing > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-listing > ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}

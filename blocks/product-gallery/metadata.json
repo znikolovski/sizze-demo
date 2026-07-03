@@ -1,0 +1,40 @@
+{
+  "variantName": "product-gallery",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-06-19T01:02:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.kmart.com.au/product/larvik-1200mm-2-drawer-desk-oakwhite-desks-tables-and-workstations-110068089/",
+    "originPage": "Kmart product detail page (PDP) main product image gallery",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "product-gallery",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "one image per slide; thumbnail strip selects the main image",
+    "buttonCount": 0,
+    "imageCount": 10
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "PDP product image galleries",
+      "thumbnail + main-image viewers",
+      "single-product multi-angle photo sets"
+    ],
+    "notSuitableFor": [
+      "rotating promotional hero rails (use carousel-rail)",
+      "multi-product recommendation rails (use carousel-rail)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/product/larvik-1200mm-2-drawer-desk-oakwhite-desks-tables-and-workstations-110068089/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-19T01:02:00.000Z"
+  }
+}

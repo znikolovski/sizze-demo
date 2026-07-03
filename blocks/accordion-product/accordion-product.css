@@ -1,0 +1,76 @@
+.accordion-product details {
+  border-bottom: 1px solid var(--kmart-border);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.accordion-product details + details {
+  margin-top: 0;
+}
+
+.accordion-product details:first-of-type {
+  border-top: 1px solid var(--kmart-border);
+}
+
+.accordion-product details p {
+  margin-bottom: 0.8em;
+}
+
+.accordion-product details summary {
+  position: relative;
+  padding: 18px 46px 18px 4px;
+  cursor: pointer;
+  list-style: none;
+  overflow: auto;
+  transition: color 0.2s;
+}
+
+.accordion-product details summary h2,
+.accordion-product details summary h3 {
+  display: inline;
+  margin: 0;
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  color: var(--kmart-navy);
+}
+
+.accordion-product details summary:focus,
+.accordion-product details summary:hover {
+  color: var(--kmart-navy);
+}
+
+.accordion-product details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-product details summary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%) rotate(135deg);
+  width: 6px;
+  height: 6px;
+  border: 2px solid;
+  border-width: 2px 2px 0 0;
+  transition: transform 0.2s;
+}
+
+.accordion-product details[open] summary::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.accordion-product details .accordion-product-item-body {
+  padding: 0 4px 16px;
+}
+
+.accordion-product details[open] .accordion-product-item-body {
+  background-color: var(--background-color);
+}
+
+.accordion-product details .accordion-product-item-body ul {
+  padding-left: 20px;
+}
+
+.accordion-product details .accordion-product-item-body li {
+  margin: 4px 0;
+}

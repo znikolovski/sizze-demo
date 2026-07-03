@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/larvik-1200mm-2-drawer-desk-oakwhite-desks-tables-and-workstations-110068089/",
+  "path": "product/larvik-1200mm-2-drawer-desk-oakwhite-desks-tables-and-workstations-110068089",
+  "timestamp": "2026-07-03T02:14:42.696Z",
+  "title": "Larvik 1200mm 2 Drawer Desk Oak/White Desks, Tables and Workstations - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

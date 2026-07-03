@@ -1,0 +1,28 @@
+/* Kmart Australia brand tokens — extracted from saved site CSS + screenshots */
+:root {
+  /* brand colors */
+  --kmart-navy: #253746;
+  --kmart-orange: #ee610f;
+  --kmart-red: #e1251b;
+  --kmart-link: #1768b0;
+  --kmart-link-hover: #12538c;
+  --kmart-grey: #f4f4f4;
+  --kmart-border: #e8eaed;
+  --kmart-teal: #1a8a8a;
+
+  /* mapped EDS tokens */
+  --background-color: #fff;
+  --light-color: #f4f4f4;
+  --dark-color: #253746;
+  --text-color: #253746;
+  --link-color: #1768b0;
+  --link-hover-color: #12538c;
+
+  /* fonts */
+  --body-font-family: 'AnkoModerat', arial, sans-serif;
+  --heading-font-family: 'AnkoModerat', arial, sans-serif;
+
+  /* spacing */
+  --section-padding: 32px;
+  --content-max-width: 1280px;
+}

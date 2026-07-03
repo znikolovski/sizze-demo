@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-19T00:15:18.253Z",
+  "sourceContext": {
+    "originUrl": "https://www.kmart.com.au/",
+    "originPage": "Kmart homepage postcode/delivery banner and Kmail newsletter signup panel",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "wide",
+    "purpose": "feature",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "side-by-side text/CTA columns",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "dark promo/signup panels",
+      "postcode/delivery chrome strips",
+      "two-part text+CTA layouts"
+    ],
+    "notSuitableFor": [
+      "distinct repeatable cards (use cards)",
+      "rotating content (use carousel)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-19T00:15:18.253Z"
+  }
+}

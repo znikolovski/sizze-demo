@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/artiss-massage-office-chair-executive-computer-gaming-chairs-pu-leather-brown-110063816/",
+  "path": "product/artiss-massage-office-chair-executive-computer-gaming-chairs-pu-leather-brown-110063816",
+  "timestamp": "2026-07-03T02:15:17.484Z",
+  "title": "Artiss Massage Office Chair Executive Computer Gaming Chairs PU Leather - Brown - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

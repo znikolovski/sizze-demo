@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/product/studymate-vinci-2-drawer-desk-oak-and-white-desks-tables-and-workstations-110068042/",
+  "path": "product/studymate-vinci-2-drawer-desk-oak-and-white-desks-tables-and-workstations-110068042",
+  "timestamp": "2026-07-03T02:15:04.325Z",
+  "title": "Studymate Vinci 2 Drawer Desk Oak and White Desks, Tables and Workstations - Kmart",
+  "template": "product-page",
+  "blocks": [
+    "product-gallery",
+    "product-buybox",
+    "accordion-product",
+    "accordion-product",
+    "accordion-product",
+    "carousel-rail"
+  ]
+}

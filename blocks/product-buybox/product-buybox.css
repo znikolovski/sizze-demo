@@ -1,0 +1,76 @@
+/* product-buybox — Kmart product summary / buy panel */
+.product-buybox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-buybox > div {
+  margin: 0;
+}
+
+.product-buybox h1 {
+  margin: 0 0 8px;
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  color: var(--kmart-navy);
+}
+
+.product-buybox p {
+  margin: 0;
+}
+
+/* price — first paragraph, large and bold */
+.product-buybox p:has(+ p) {
+  line-height: 1.4;
+}
+
+.product-buybox > div > p:nth-of-type(1) {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--kmart-navy);
+}
+
+/* rating line muted */
+.product-buybox > div > p:nth-of-type(2) {
+  color: #6a7783;
+  font-size: var(--body-font-size-xs);
+  margin-bottom: 12px;
+}
+
+/* "Add to bag" CTA → orange button */
+.product-buybox a[href*="add-to-bag" i] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 360px;
+  padding: 14px 24px;
+  margin: 4px 0 12px;
+  border-radius: 28px;
+  background-color: var(--kmart-orange);
+  color: #fff;
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+  text-decoration: none;
+}
+
+.product-buybox a[href*="add-to-bag" i]:hover {
+  background-color: #d35309;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* seller note muted */
+.product-buybox > div > p:nth-of-type(5) {
+  color: #6a7783;
+  font-size: var(--body-font-size-xs);
+}
+
+/* fulfilment block */
+.product-buybox .product-buybox-fulfilment,
+.product-buybox > div > div {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--kmart-border);
+}

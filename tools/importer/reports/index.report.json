@@ -1,0 +1,24 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/",
+  "path": "index",
+  "timestamp": "2026-07-03T02:14:29.097Z",
+  "title": "Kmart Australia - Low Prices for Life",
+  "template": "homepage",
+  "blocks": [
+    "columns-promo",
+    "hero-promo",
+    "carousel-rail",
+    "carousel-rail",
+    "carousel-rail",
+    "carousel-rail",
+    "carousel-rail",
+    "cards-product",
+    "cards-product",
+    "cards-product",
+    "cards-product",
+    "cards-product",
+    "cards-product",
+    "cards-product"
+  ]
+}
