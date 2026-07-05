@@ -174,12 +174,14 @@ header nav::-webkit-scrollbar {
   display: none;
 }
 
-header nav[aria-expanded='true'] {
-  height: auto;
-  flex-direction: column;
-  align-items: flex-start;
-  overflow-y: auto;
-  min-height: 100dvh;
+@media (width < 900px) {
+  header nav[aria-expanded='true'] {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    min-height: 100dvh;
+  }
 }
 
 header nav p {
