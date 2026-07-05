@@ -1,43 +1,107 @@
-footer {
-  background-color: var(--kmart-navy);
-  color: #fff;
+footer .footer-top-band {
+  background-color: var(--background-color);
+  color: var(--kmart-navy);
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
+footer .footer-top-band > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 24px 24px 32px;
 }
 
-footer .footer p {
-  margin: 0 0 12px;
+footer .footer-top-band p {
+  margin: 0 0 16px;
+  color: var(--kmart-navy);
 }
 
-footer .footer h4 {
-  color: #fff;
-  font-size: 16px;
+footer .footer-top-band h4 {
+  color: var(--kmart-navy);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
   margin: 0 0 16px;
 }
 
-footer .footer a:any-link {
-  color: #d7dde2;
+footer .footer-top-band ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-footer .footer a:hover {
-  color: #fff;
+footer .footer-top-band li {
+  margin-bottom: 10px;
 }
 
-footer .footer .columns > div {
+footer .footer-top-band a:any-link {
+  color: var(--kmart-navy);
+  text-decoration: none;
+}
+
+footer .footer-top-band a:hover {
+  text-decoration: underline;
+}
+
+footer .footer-top-band .columns > div {
   align-items: flex-start;
+  gap: 24px;
 }
 
-footer .footer .columns > div > div {
+footer .footer-top-band .columns > div > div {
   flex: 1;
 }
 
+footer .footer-payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 24px;
+}
+
+footer .footer-payment-icons .icon img {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+/* rainbow stripe */
+footer .footer-rainbow-stripe {
+  height: 46px;
+  background-image: repeating-linear-gradient(
+    -60deg,
+    #6b54a2 0,
+    #9e98c8 40px,
+    #d30e8b 80px,
+    #e170aa 120px,
+    #0098d8 160px,
+    #00baee 200px,
+    #00a8b6 240px,
+    #57c4ca 280px,
+    #57b847 320px,
+    #b5c427 360px,
+    #f68f1e 400px,
+    #fcb912 440px
+  );
+}
+
+/* copyright band */
+footer .footer-copyright-band {
+  background-color: var(--kmart-navy);
+  color: #fff;
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+}
+
+footer .footer-copyright-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  font-size: var(--body-font-size-xs);
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer-top-band > div {
+    padding: 32px 32px 40px;
   }
 }

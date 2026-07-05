@@ -14,7 +14,16 @@ export default async function decorate(block) {
   // decorate footer DOM
   block.textContent = '';
   const footer = document.createElement('div');
+  footer.className = 'footer-top-band';
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
-
   block.append(footer);
+
+  const stripe = document.createElement('div');
+  stripe.className = 'footer-rainbow-stripe';
+  block.append(stripe);
+
+  const copyright = document.createElement('div');
+  copyright.className = 'footer-copyright-band';
+  copyright.innerHTML = `<div class="footer-copyright-inner">&copy; Kmart ${new Date().getFullYear()}</div>`;
+  block.append(copyright);
 }

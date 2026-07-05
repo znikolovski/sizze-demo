@@ -16,33 +16,46 @@
   --light-color: #f7f7f7;
   --dark-color: #4b5159;
   --text-color: #222222;
-  --link-color: #253746;
-  --link-hover-color: #12212f;
+  --link-color: #0078d4;
+  --link-hover-color: #0063b1;
 
-  /* Kmart brand palette */
+  /* Kmart brand palette (verified against live kmart.com.au, 2026-07-05) */
   --kmart-navy: #253746;
-  --kmart-red: #e1251b;
-  --kmart-yellow: #ffb400;
+  --kmart-red: #dd182c;
+  --kmart-blue: #1768b0;
+  --kmart-action-blue: #0078d4;
+  --kmart-target-red: #ba0000;
+  --kmart-officeworks-blue: #001288;
+  --kmart-seller-chip-bg: #efeff5;
+  --kmart-seller-chip-text: #4b5159;
+  --kmart-body-copy: #63666a;
+  --kmart-heading-color: #222222;
+  --kmart-price-color: #131416;
+  --kmart-benefits-bg: #f4f4f4;
+  --kmart-online-only: #12538c;
+  --kmart-feedback-bg: #e4f0fb;
+  --kmart-onepass-purple: #822bb5;
 
-  /* fonts */
-  --body-font-family: helvetica, roboto-fallback, arial, sans-serif;
-  --heading-font-family: helvetica, roboto-condensed-fallback, arial, sans-serif;
+  /* fonts (AnkoModerat is Kmart's licensed custom font; fall back to a close web-safe stack) */
+  --body-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --heading-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xxl: 44px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 28px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 16px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 48px;
+  --utility-bar-height: 48px;
 }
 
 /* fallback fonts */
