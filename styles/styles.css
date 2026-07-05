@@ -325,6 +325,14 @@ main > .section:first-of-type {
   margin-top: 0;
 }
 
+/* "Latest Arrivals" renders as a small tab-style label on the real site
+ * (16px/400), not a bold section heading like every other section title. */
+main > .section:first-of-type > div > h2:first-child {
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
 @media (width >= 900px) {
   main > .section > div {
     padding: 0 32px;
