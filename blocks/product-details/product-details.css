@@ -1,0 +1,124 @@
+.product-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1264px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.product-details-gallery-main picture {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: var(--light-color);
+}
+
+.product-details-gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-details-gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.product-details-thumb {
+  border: 2px solid transparent;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.product-details-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-details-thumb.is-active {
+  border-color: var(--kmart-red, #e2231a);
+}
+
+.product-details-buybox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-details-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 8px 0 0;
+}
+
+.product-details-sku {
+  font-size: 13px;
+  color: var(--dark-color);
+  margin: 0;
+}
+
+.product-details-cta {
+  margin-top: 16px;
+  padding: 14px 32px;
+  background-color: var(--kmart-red, #e2231a);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+}
+
+.product-details-cta:hover {
+  background-color: #b81c14;
+}
+
+.product-details-description {
+  margin-top: 24px;
+  line-height: 1.6;
+}
+
+.product-details-description h2 {
+  font-size: var(--heading-font-size-xs);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.product-details-description ul {
+  padding-left: 20px;
+}
+
+.product-details-description li {
+  margin-bottom: 4px;
+}
+
+@media (width >= 900px) {
+  .product-details-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 40px 32px;
+  }
+
+  .product-details-gallery {
+    flex: 1;
+    max-width: 560px;
+  }
+
+  .product-details-buybox {
+    flex: 1;
+    max-width: 480px;
+  }
+}

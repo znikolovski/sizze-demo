@@ -270,3 +270,45 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+
+/* Kmart brand overrides */
+header .nav-wrapper {
+  background-color: #fff;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+header nav .nav-brand svg {
+  display: block;
+  height: 32px;
+  width: auto;
+}
+
+header nav .nav-sections ul {
+  font-weight: 600;
+  text-transform: none;
+}
+
+header nav .nav-sections a:any-link {
+  color: var(--kmart-navy);
+}
+
+header nav .nav-sections a:hover {
+  color: var(--kmart-red);
+}
+
+header nav .nav-tools p {
+  display: inline-block;
+  margin: 0 0 0 20px;
+}
+
+header nav .nav-tools a:any-link {
+  color: var(--kmart-navy);
+  font-weight: 600;
+}
+
+@media (width >= 900px) {
+  header nav .nav-sections ul {
+    display: flex;
+    gap: 24px;
+  }
+}
