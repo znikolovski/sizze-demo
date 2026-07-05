@@ -341,3 +341,35 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* ---------------------------------------------------------------------
+ * Breadcrumb (default content, not a block) — spec §4.1/§5.1
+ * Breadcrumbs are authored as a plain <p><a>...</a> / ... / Plain text</p>
+ * immediately before the page <h1>, inside the first section of the page.
+ * Link color matches nav navy, current/last (non-link) segment is a lighter
+ * gray, and the " / " separators render in a muted gray to match the real
+ * site's `::after` separator treatment.
+ * --------------------------------------------------------------------- */
+main > div:first-child > p:first-child {
+  font-size: 14px;
+  color: var(--kmart-body-copy);
+}
+
+main > div:first-child > p:first-child a {
+  font-size: 14px;
+  color: var(--kmart-navy);
+  text-decoration: none;
+}
+
+main > div:first-child > p:first-child a:hover {
+  text-decoration: underline;
+}
+
+/* Note: the real site renders the " / " separator and the current/last
+ * (non-link) segment in two distinct grays (#B1B3B3 for the separator,
+ * #63666a for the current segment) via a CSS ::after pseudo-element on
+ * discrete <li> nodes. Our breadcrumbs are authored as plain text inside a
+ * single <p> with " / " separators, so text nodes can't be styled
+ * independently from CSS alone — the paragraph as a whole (separators +
+ * current segment) is set to the body-copy gray (#63666a) as the closest
+ * faithful approximation, while <a> links are overridden to navy above. */

@@ -3,17 +3,21 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
   gap: 24px;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
+  border: none;
   background-color: var(--background-color);
 }
 
+/* Latest Arrivals tile pattern (spec §3.2): square image, label below in
+ * normal block flow (not overlaid), centered text. */
 .cards .cards-card-body {
-  margin: 16px;
+  margin: 0;
+  padding-top: 8px;
+  text-align: center;
 }
 
 .cards .cards-card-image {
@@ -22,6 +26,13 @@
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+}
+
+.cards .cards-card-body p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--kmart-heading-color);
+  margin: 0;
 }

@@ -7,45 +7,49 @@
   padding: 0 24px;
 }
 
-.product-details-gallery-main picture {
+/* Gallery: masonry-style stacked grid per spec §5.9 — first image full-width,
+   remaining images in a 3-up grid below it. All images square (1:1). */
+.product-details-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.product-details-gallery-item {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  background-color: var(--light-color);
-}
-
-.product-details-gallery-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.product-details-gallery-thumbs {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-}
-
-.product-details-thumb {
-  border: 2px solid transparent;
+  border: none;
   background: none;
   padding: 0;
   cursor: pointer;
-  width: 64px;
-  height: 64px;
-  flex-shrink: 0;
+  line-height: 0;
 }
 
-.product-details-thumb img {
+.product-details-gallery-item picture,
+.product-details-gallery-item img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: var(--light-color);
 }
 
-.product-details-thumb.is-active {
-  border-color: var(--kmart-red, #e2231a);
+.product-details-gallery-main-item {
+  grid-column: 1 / -1;
+}
+
+.product-details-gallery :not(.product-details-gallery-main-item) {
+  grid-column: span 1;
+}
+
+@media (width >= 600px) {
+  .product-details-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-details-gallery-main-item {
+    grid-column: 1 / -1;
+  }
 }
 
 .product-details-buybox {
@@ -54,35 +58,164 @@
   gap: 8px;
 }
 
+/* Large product-detail price token (spec §5.3) — distinct from the smaller
+   28px card-grid price token used in product-grid. */
 .product-details-price {
-  font-size: 32px;
+  font-size: 44px;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--kmart-price-color);
   margin: 8px 0 0;
 }
 
+/* Rating (left) + SKU (right) row, per product-title-price-gallery.png */
+.product-details-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.product-details-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.product-details-stars {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.product-details-stars .icon {
+  width: 12px;
+  height: 12px;
+  display: inline-flex;
+}
+
+.product-details-stars .icon img {
+  width: 12px;
+  height: 12px;
+  aspect-ratio: auto;
+}
+
+.product-details-rating-value,
+.product-details-review-count,
+.product-details-rating-zero {
+  font-size: 12px;
+  color: var(--kmart-heading-color);
+}
+
 .product-details-sku {
-  font-size: 13px;
-  color: var(--dark-color);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--kmart-heading-color);
   margin: 0;
 }
 
-.product-details-cta {
-  margin-top: 16px;
-  padding: 14px 32px;
-  background-color: var(--kmart-red, #e2231a);
-  color: #fff;
-  border: none;
-  border-radius: 24px;
+/* "Online only" tag (spec §5.5) */
+.product-details-online-only {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--kmart-online-only);
   font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  width: 100%;
-  max-width: 320px;
+  margin: 4px 0 0;
 }
 
-.product-details-cta:hover {
-  background-color: #b81c14;
+.product-details-online-only .icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+}
+
+.product-details-online-only .icon img {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: auto;
+}
+
+/* Add to bag + wishlist row */
+.product-details-cta-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.product-details-cta-button {
+  background-color: var(--kmart-action-blue);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 32px;
+  height: 48px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 430px;
+}
+
+.product-details-cta-button:hover {
+  background-color: #0063b1;
+}
+
+.product-details-wishlist-button {
+  width: 51px;
+  height: 48px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border: 1px solid var(--kmart-navy);
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-details-wishlist-button .icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+}
+
+.product-details-wishlist-button .icon img {
+  width: 20px;
+  height: 20px;
+  aspect-ratio: auto;
+}
+
+/* "Sold and shipped by" module (spec §5.7) */
+.product-details-sold-by {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--kmart-benefits-bg);
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--kmart-navy);
+}
+
+.product-details-sold-by .icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.product-details-sold-by .icon img {
+  width: 20px;
+  height: 20px;
+  aspect-ratio: auto;
+}
+
+.product-details-sold-by a {
+  color: var(--kmart-action-blue);
+  text-decoration: underline;
+  font-weight: 400;
 }
 
 .product-details-description {

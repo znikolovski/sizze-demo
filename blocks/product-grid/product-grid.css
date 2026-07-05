@@ -23,32 +23,115 @@
   text-decoration: underline;
 }
 
+/* Image container: 4:5 portrait per spec §4.4, light gray placeholder bg */
 .product-grid-image {
+  position: relative;
   line-height: 0;
-  background-color: var(--light-color);
+  background-color: #f7f7f7;
 }
 
 .product-grid-image img {
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: contain;
+  object-fit: cover;
+  display: block;
+}
+
+/* Quick-add circular button, overlaid top-right on the image */
+.product-grid-quick-add {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--kmart-action-blue);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 6px 12px 6px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.product-grid-quick-add .icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+}
+
+.product-grid-quick-add .icon img {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: auto;
+}
+
+.product-grid-quick-add-label {
+  color: #fff;
 }
 
 .product-grid-body {
   padding: 12px 16px 16px;
 }
 
+/* Seller/brand chip — small pill above the product name */
+.product-grid-seller {
+  display: inline-block;
+  background-color: var(--kmart-seller-chip-bg);
+  color: var(--kmart-seller-chip-text);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 8px;
+  line-height: 1;
+}
+
 .product-grid-name {
-  font-size: var(--body-font-size-s);
+  font-size: 16px;
+  color: var(--kmart-navy);
   margin: 0 0 6px;
   line-height: 1.4;
 }
 
 .product-grid-price {
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--kmart-heading-color);
   margin: 0;
+}
+
+/* Star rating + review count row — omitted entirely when no rating data */
+.product-grid-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.product-grid-stars {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.product-grid-stars .icon {
+  width: 12px;
+  height: 12px;
+  display: inline-flex;
+}
+
+.product-grid-stars .icon img {
+  width: 12px;
+  height: 12px;
+  aspect-ratio: auto;
+}
+
+.product-grid-rating-value,
+.product-grid-review-count {
+  font-size: 12px;
+  color: var(--kmart-heading-color);
 }
 
 @media (width >= 900px) {
