@@ -37,6 +37,11 @@ export default function decorate(block) {
   rows.forEach((row, i) => {
     row.classList.add('hero-slide');
     if (i === 0) row.classList.add('is-active');
+    // Force-eager-load every slide's image up front so switching slides
+    // never shows a flash of missing background while a lazy image fetches.
+    row.querySelectorAll('img').forEach((img) => {
+      img.loading = 'eager';
+    });
     track.append(row);
   });
 
