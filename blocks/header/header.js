@@ -259,7 +259,31 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+
+  // Overflow scroll arrow: real Kmart nav shows a circular dark arrow at
+  // the right edge when the nav row overflows its container.
+  const navArrow = document.createElement('button');
+  navArrow.type = 'button';
+  navArrow.className = 'nav-scroll-arrow';
+  navArrow.setAttribute('aria-label', 'Scroll navigation right');
+  navArrow.innerHTML = '<span class="icon icon-arrow-right"></span>';
+  navArrow.addEventListener('click', () => {
+    nav.scrollBy({ left: 200, behavior: 'smooth' });
+  });
+  navWrapper.append(navArrow);
+
+  function updateArrowVisibility() {
+    const hasOverflow = nav.scrollWidth > nav.clientWidth + 4;
+    const atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    navArrow.classList.toggle('is-hidden', !hasOverflow || atEnd);
+  }
+
+  nav.addEventListener('scroll', updateArrowVisibility);
+  window.addEventListener('resize', updateArrowVisibility);
+
   block.append(navWrapper);
+  decorateIcons(navWrapper);
+  updateArrowVisibility();
 
   const benefits = buildBenefitsBar();
   block.append(benefits);
