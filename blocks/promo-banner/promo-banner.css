@@ -1,0 +1,67 @@
+.promo-banner-wrapper {
+  padding: 0 24px;
+}
+
+.promo-banner {
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  color: #fff;
+  background-color: var(--kmart-navy);
+}
+
+.promo-banner.joy {
+  background-color: #b10070;
+}
+
+.promo-banner.onepass {
+  background-color: #9901f1;
+}
+
+.promo-banner h2 {
+  color: #fff;
+  font-size: var(--heading-font-size-s);
+  margin: 0 0 8px;
+}
+
+.promo-banner p {
+  color: #fff;
+  margin: 0 0 20px;
+  font-size: var(--body-font-size-m);
+}
+
+.promo-banner a.button {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
+  border-radius: 32px;
+  font-weight: 700;
+}
+
+.promo-banner a.button:hover {
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+}
+
+@media (width >= 900px) {
+  .promo-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: left;
+    padding: 32px 48px;
+  }
+
+  .promo-banner h2 {
+    margin: 0;
+  }
+
+  .promo-banner p {
+    margin: 0;
+  }
+
+  .promo-banner a.button {
+    flex-shrink: 0;
+  }
+}

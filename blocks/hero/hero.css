@@ -5,8 +5,22 @@
 
 .hero {
   position: relative;
+  overflow: hidden;
+}
+
+.hero-track {
+  position: relative;
+}
+
+.hero-slide {
+  position: relative;
   padding: 40px 24px;
   min-height: 300px;
+  display: none;
+}
+
+.hero-slide.is-active {
+  display: block;
 }
 
 .hero h1 {
@@ -31,7 +45,7 @@
   box-sizing: border-box;
 }
 
-.hero::before {
+.hero-slide::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -58,11 +72,15 @@
 }
 
 @media (width >= 900px) {
-  .hero {
+  .hero-slide {
     padding: 64px 32px;
     min-height: 420px;
-    display: flex;
+    display: none;
     align-items: center;
+  }
+
+  .hero-slide.is-active {
+    display: flex;
   }
 }
 
@@ -73,7 +91,7 @@
   text-align: center;
 }
 
-.hero.cta::before {
+.hero.cta .hero-slide::before {
   content: none;
 }
 
@@ -84,8 +102,92 @@
 }
 
 @media (width >= 900px) {
-  .hero.cta {
+  .hero.cta .hero-slide {
     display: block;
     padding: 48px 32px;
   }
+}
+
+/* ===== Carousel controls: play/pause + pagination dots ===== */
+.hero-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 24px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-play-pause {
+  width: 36px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.hero-pause-icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+  position: relative;
+}
+
+.hero-pause-icon::before,
+.hero-pause-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 14px;
+  background-color: #222;
+}
+
+.hero-pause-icon::before {
+  left: 2px;
+}
+
+.hero-pause-icon::after {
+  left: 9px;
+}
+
+.hero-play-pause.is-paused .hero-pause-icon {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid #222;
+  background: none;
+}
+
+.hero-play-pause.is-paused .hero-pause-icon::before,
+.hero-play-pause.is-paused .hero-pause-icon::after {
+  content: none;
+}
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #222;
+  background-color: transparent;
+  opacity: 0.8;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hero-dot.is-active {
+  background-color: #222;
+  opacity: 1;
 }

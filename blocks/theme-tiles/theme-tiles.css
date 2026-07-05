@@ -1,0 +1,48 @@
+.theme-tiles-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.theme-tiles-list::-webkit-scrollbar {
+  display: none;
+}
+
+.theme-tiles-item {
+  flex: 0 0 220px;
+}
+
+.theme-tiles-link {
+  display: block;
+  text-decoration: none;
+  color: currentcolor;
+}
+
+.theme-tiles-image {
+  line-height: 0;
+  background-color: var(--light-color);
+}
+
+.theme-tiles-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.theme-tiles-label {
+  margin: 12px 0 0;
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  color: var(--kmart-heading-color);
+}
+
+@media (width >= 900px) {
+  .theme-tiles-item {
+    flex: 0 0 260px;
+  }
+}

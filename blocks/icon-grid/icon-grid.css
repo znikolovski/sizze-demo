@@ -1,0 +1,53 @@
+.icon-grid-wrapper {
+  background-color: #f7f7f7;
+}
+
+.icon-grid-list {
+  list-style: none;
+  margin: 0;
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 16px;
+  text-align: center;
+}
+
+.icon-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-grid-item .icon {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--kmart-navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-grid-item .icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-grid-label {
+  font-size: var(--body-font-size-s);
+  color: var(--kmart-navy);
+  margin: 0;
+}
+
+.icon-grid-label a {
+  color: var(--kmart-navy);
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .icon-grid-list {
+    grid-template-columns: repeat(7, 1fr);
+    padding: 40px 32px;
+  }
+}

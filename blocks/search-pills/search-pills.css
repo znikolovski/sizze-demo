@@ -1,0 +1,31 @@
+.search-pills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.search-pills-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 20px;
+  background-color: rgb(231 231 231);
+  color: var(--kmart-heading-color);
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+  white-space: nowrap;
+}
+
+.search-pills-link .icon img {
+  width: 16px;
+  height: 16px;
+}
+
+.search-pills-link:hover {
+  background-color: rgb(220 220 220);
+}
