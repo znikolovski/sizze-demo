@@ -46,14 +46,15 @@
 }
 
 .hero a.button {
-  background-color: var(--kmart-red, #e2231a);
-  border-color: var(--kmart-red, #e2231a);
+  background-color: var(--kmart-action-blue);
+  border-color: var(--kmart-action-blue);
   color: #fff;
+  border-radius: 2px;
 }
 
 .hero a.button:hover {
-  background-color: #b81c14;
-  border-color: #b81c14;
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
 }
 
 @media (width >= 900px) {

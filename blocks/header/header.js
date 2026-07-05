@@ -1,4 +1,4 @@
-import { getMetadata } from '../../scripts/aem.js';
+import { getMetadata, decorateIcons } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
@@ -172,6 +172,10 @@ function buildTopRow() {
       <span>Ask Joy</span>
     </button>
     <div class="header-icon-row">
+      <a href="/stores" class="header-icon-item">
+        <span class="icon icon-stores"></span>
+        <span>Stores</span>
+      </a>
       <a href="/bag" class="header-icon-item">
         <span class="icon icon-bag"></span>
         <span>Bag</span>
@@ -203,6 +207,7 @@ export default async function decorate(block) {
 
   block.append(buildUtilityBar());
   block.append(buildTopRow());
+  decorateIcons(block);
 
   const nav = document.createElement('nav');
   nav.id = 'nav';
@@ -256,5 +261,7 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
-  block.append(buildBenefitsBar());
+  const benefits = buildBenefitsBar();
+  block.append(benefits);
+  decorateIcons(benefits);
 }
