@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invalid Site Configuration</title>
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="script-src 'nonce-aem' 'strict-dynamic' 'unsafe-inline' http: https:; base-uri 'self'; object-src 'none';"
+    move-to-http-header="true"
+  >
+  <script nonce="aem" type="text/javascript">
+    window.isErrorPage = true;
+    window.errorCode = '418';
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Invalid Site Configuration">
+  <script nonce="aem" src="/scripts/aem.js" type="module"></script>
+  <script nonce="aem" src="/scripts/scripts.js" type="module"></script>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <style>
+    main.error {
+      align-items: center;
+      display: flex;
+      margin: 0 auto;
+      max-width: 1264px;
+      min-height: 50vh;
+      padding: 0 32px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="appear">
+  <header></header>
+  <main class="error">
+    <div class="section">
+      <h2 class="error-message">Commerce Connection Error</h2>
+      <p class="error-message">This page could not load live product data from the connected Adobe Commerce backend. This is usually a temporary connectivity or configuration issue (for example, a CORS policy on the Commerce GraphQL endpoint blocking requests from this domain) rather than a problem with the page content itself.</p>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
+</html>
