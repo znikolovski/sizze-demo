@@ -1,0 +1,134 @@
+/*
+ * Local design tokens the ported Commerce PDP CSS expects (from the
+ * aem-boilerplate-commerce global styles.css, which this project does not
+ * otherwise pull in). Scoped to this block so they don't leak into or
+ * collide with the rest of the site's --kmart-* tokens.
+ */
+.commerce-product-details {
+  --grid-1-columns: 4;
+  --grid-1-gutters: 16px;
+  --grid-3-columns: 12;
+  --grid-3-gutters: 24px;
+  --spacing-xsmall: 8px;
+  --spacing-small: 16px;
+  --spacing-medium: 24px;
+  --spacing-big: 32px;
+  --spacing-xxbig: 48px;
+  --color-neutral-800: #3d3d3d;
+}
+
+.commerce-product-details__wrapper {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-1-columns), 1fr);
+  column-gap: var(--grid-1-gutters);
+  margin-top: var(--spacing-medium);
+}
+
+.commerce-product-details__left-column {
+  display: none;
+}
+
+.commerce-product-details__right-column {
+  grid-column: 1 / span 4;
+  color: var(--color-neutral-800);
+}
+
+.commerce-product-details__alert {
+  margin-top: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
+}
+
+.commerce-product-details__alert:empty {
+  display: none;
+}
+
+.commerce-product-details__header {
+  margin-bottom: var(--spacing-medium);
+}
+
+.commerce-product-details__price {
+  margin-top: var(--spacing-medium);
+}
+
+.commerce-product-details__gallery .pdp-carousel {
+  max-height: 60vh;
+}
+
+.commerce-product-details__gallery .pdp-carousel--thumbnailsRow {
+  max-height: 80vh;
+}
+
+.commerce-product-details__gallery .pdp-overlay__content .pdp-carousel,
+.commerce-product-details__gallery .pdp-overlay__content .pdp-carousel--thumbnailsRow {
+  max-height: unset;
+}
+
+.commerce-product-details__configuration {
+  grid-column: 1 / span 4;
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--grid-1-gutters);
+  grid-auto-rows: max-content;
+  margin-bottom: var(--spacing-xxbig);
+  margin-top: var(--spacing-big);
+}
+
+.commerce-product-details__buttons {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--grid-1-gutters);
+  grid-auto-rows: max-content;
+}
+
+.commerce-product-details__buttons > div {
+  display: contents;
+}
+
+.commerce-product-details__attributes {
+  margin-top: var(--spacing-xsmall);
+}
+
+@media (width >= 900px) {
+  .commerce-product-details__wrapper {
+    grid-template-columns: repeat(var(--grid-3-columns), 1fr);
+    column-gap: var(--grid-3-gutters);
+    position: relative;
+  }
+
+  .commerce-product-details__alert {
+    grid-column: 1 / span 12;
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .commerce-product-details__left-column {
+    display: block;
+    grid-column: 1 / span 6;
+  }
+
+  .commerce-product-details__right-column {
+    grid-column: 7 / span 5;
+    padding-top: var(--spacing-medium);
+  }
+
+  .commerce-product-details__right-column .commerce-product-details__gallery {
+    display: none;
+  }
+
+  .commerce-product-details__configuration {
+    grid-template-columns: repeat(var(--grid-1-columns), 1fr);
+    gap: var(--grid-1-gutters);
+    margin-top: var(--spacing-xxbig);
+  }
+
+  .commerce-product-details__options {
+    grid-column: 1 / span 4;
+  }
+
+  .commerce-product-details__buttons {
+    grid-column: 1 / span 4;
+  }
+
+  .commerce-product-details__quantity {
+    grid-column: 1 / span 2;
+  }
+}

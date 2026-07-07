@@ -12,6 +12,14 @@ import {
   buildBlock,
 } from './aem.js';
 
+// Commerce is only initialized on pages that actually use the
+// commerce-product-details block, so pages unrelated to the Adobe
+// Commerce integration are never affected by it (no extra network calls,
+// no risk of an unrelated page hitting the Commerce error-page redirect).
+function pageUsesCommerce(doc) {
+  return !!doc.querySelector('main .commerce-product-details');
+}
+
 /**
  * load fonts.css and set a session storage flag
  */
@@ -138,8 +146,22 @@ async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
+  const usesCommerce = pageUsesCommerce(doc);
+
   if (main) {
-    decorateMain(main);
+    if (usesCommerce) {
+      const commerce = await import('./commerce.js');
+      try {
+        await commerce.initializeCommerce();
+        decorateMain(main);
+        await commerce.loadCommerceEager();
+      } catch (e) {
+        console.error('Error initializing commerce configuration:', e);
+        await commerce.loadErrorPage(418);
+      }
+    } else {
+      decorateMain(main);
+    }
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
@@ -169,6 +191,10 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   loadFooter(doc.querySelector('footer'));
+
+  if (pageUsesCommerce(doc)) {
+    import('./commerce.js').then(({ loadCommerceLazy }) => loadCommerceLazy());
+  }
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
