@@ -1,0 +1,34 @@
+{
+  "meshConfig": {
+    "sources": [
+      {
+        "name": "BodeaCommerce",
+        "handler": {
+          "graphql": {
+            "endpoint": "https://bodea-com548.adobedemo.com/graphql",
+            "operationHeaders": {
+              "Store": "bodea_us",
+              "Magento-Store-Code": "bodea_store",
+              "Magento-Store-View-Code": "bodea_us",
+              "Magento-Website-Code": "bodea",
+              "x-api-key": "search_gql",
+              "Magento-Environment-Id": "539925ad-37a7-45a3-8039-02864790c736"
+            }
+          }
+        }
+      }
+    ],
+    "responseConfig": {
+      "CORS": {
+        "origin": [
+          "https://main--sizze-demo--znikolovski.aem.page",
+          "https://main--sizze-demo--znikolovski.aem.live"
+        ],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allowedHeaders": "Content-Type, Authorization",
+        "credentials": false,
+        "maxAge": 60480
+      }
+    }
+  }
+}
