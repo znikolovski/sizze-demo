@@ -1,7 +1,7 @@
 {
   "public": {
     "default": {
-      "commerce-core-endpoint": "https://bodea-com548.adobedemo.com/graphql",
+      "commerce-core-endpoint": "https://edge-graph.adobe.io/api/27e4b227-e533-4fdc-8674-d44360c559da/graphql",
       "commerce-endpoint": "https://edge-graph.adobe.io/api/27e4b227-e533-4fdc-8674-d44360c559da/graphql",
       "commerce-assets-enabled": false,
       "headers": {
