@@ -257,7 +257,11 @@ export async function fetchPlaceholders(path) {
         return window.placeholders._pending[resourceCacheKey];
       }
 
-      const resourceFetchPromise = fetch(`${url}?sheet=data`, { cache: 'force-cache' }).then(async (response) => {
+      // Single-sheet DA documents (our placeholders/*.html sheets) are served
+      // at the bare `<path>.json` — appending `?sheet=data` 404s even though
+      // the sheet's own internal tab is named "data". The `?sheet=<name>`
+      // query param is only for multi-sheet workbooks with more than one tab.
+      const resourceFetchPromise = fetch(url, { cache: 'force-cache' }).then(async (response) => {
         if (response.ok) {
           const data = await response.json();
           window.placeholders[resourceCacheKey] = data;
