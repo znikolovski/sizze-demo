@@ -186,6 +186,18 @@ export default async function decorate(block) {
   let inlineAlert = null;
   const routeToWishlist = rootLink('/wishlist');
 
+  // The WishlistToggle container dereferences `product.topLevelSku`
+  // unconditionally with no null-guard (vendored @dropins code, not ours
+  // to patch). `product` is a snapshot of the last `pdp/data` event taken
+  // above at decorate-time — on first paint that event usually hasn't
+  // fired yet, so `product` is still null here. Rendering WishlistToggle
+  // with a null product crashes the whole block's Promise.all. Track the
+  // latest known-good product in a mutable binding so the `pdp/data`
+  // handler below (registered after this Promise.all resolves) can
+  // render/update the wishlist button once real data actually arrives.
+  let latestProduct = product;
+  let wishlistToggleBtn = null;
+
   const [
     _galleryMobile,
     _gallery,
@@ -197,7 +209,6 @@ export default async function decorate(block) {
     _giftCardOptions,
     _description,
     _attributes,
-    wishlistToggleBtn,
   ] = await Promise.all([
     // Gallery (Mobile)
     pdpRendered.render(ProductGallery, {
@@ -264,12 +275,16 @@ export default async function decorate(block) {
     pdpRendered.render(ProductAttributes, {
       formatValue: formatNumericAttributeValue,
     })($attributes),
-
-    // Wishlist button - WishlistToggle Container
-    wishlistRender.render(WishlistToggle, {
-      product,
-    })($wishlistToggleBtn),
   ]);
+
+  // Wishlist button - WishlistToggle Container. Only render once we have
+  // a real product (see comment above `latestProduct`) — rendering with
+  // a null product crashes WishlistToggle's internal useCallback.
+  if (latestProduct) {
+    wishlistToggleBtn = await wishlistRender.render(WishlistToggle, {
+      product: latestProduct,
+    })($wishlistToggleBtn);
+  }
 
   // Configuration – Button - Add to Cart
   const addToCart = await UI.render(Button, {
@@ -361,6 +376,24 @@ export default async function decorate(block) {
   events.on('pdp/data', (data) => {
     isOutOfStock = data?.inStock === false;
     addToCart.setProps((prev) => ({ ...prev, disabled: isOutOfStock }));
+
+    // See comment above `latestProduct` at the top of decorate(): the
+    // wishlist button couldn't be rendered at initial-paint time if this
+    // event hadn't fired yet with real data. Once it has, render it now
+    // (first time) or update its `product` prop (subsequent variant/
+    // option changes that re-fire `pdp/data`).
+    if (data?.sku) {
+      latestProduct = data;
+      if (!wishlistToggleBtn) {
+        wishlistRender.render(WishlistToggle, {
+          product: latestProduct,
+        })($wishlistToggleBtn).then((instance) => {
+          wishlistToggleBtn = instance;
+        });
+      } else {
+        wishlistToggleBtn.setProps((prev) => ({ ...prev, product: latestProduct }));
+      }
+    }
   }, { eager: true });
 
   events.on('pdp/valid', (valid) => {
@@ -382,7 +415,7 @@ export default async function decorate(block) {
       wishlistToggleBtn.setProps((prev) => ({
         ...prev,
         product: {
-          ...product,
+          ...latestProduct,
           optionUIDs,
         },
       }));
