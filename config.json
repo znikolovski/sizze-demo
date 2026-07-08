@@ -2,18 +2,11 @@
   "public": {
     "default": {
       "commerce-core-endpoint": "https://bodea-com548.adobedemo.com/graphql",
-      "commerce-endpoint": "https://bodea-com548.adobedemo.com/graphql",
+      "commerce-endpoint": "https://edge-graph.adobe.io/api/27e4b227-e533-4fdc-8674-d44360c559da/graphql",
       "commerce-assets-enabled": false,
       "headers": {
         "all": {
           "Store": "bodea_us"
-        },
-        "cs": {
-          "Magento-Store-Code": "bodea_store",
-          "Magento-Store-View-Code": "bodea_us",
-          "Magento-Website-Code": "bodea",
-          "x-api-key": "search_gql",
-          "Magento-Environment-Id": "539925ad-37a7-45a3-8039-02864790c736"
         }
       },
       "analytics": {
