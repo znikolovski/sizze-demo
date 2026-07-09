@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "http://localhost:8787/category/home-and-living/furniture/",
+  "path": "category/home-and-living/furniture",
+  "timestamp": "2026-07-03T03:22:15.388Z",
+  "title": "",
+  "template": "category-page",
+  "blocks": [
+    "cards-listing",
+    "cards-listing"
+  ]
+}

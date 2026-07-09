@@ -138,6 +138,48 @@
       ]
     },
     {
+      "name": "category-page",
+      "urls": [
+        "https://www.kmart.com.au/category/home-and-living/furniture/",
+        "https://www.kmart.com.au/category/home-and-living/office-furniture/"
+      ],
+      "representativeUrl": "https://www.kmart.com.au/category/home-and-living/furniture/",
+      "coverageGaps": [],
+      "description": "Category product listing page (PLP) with breadcrumbs, category name/description, and a paginated product grid. Same Kmart PLP structure as collection-page; reuses the cards-listing parser. Grouped by URL pattern (live pages blocked by bot protection).",
+      "blocks": [
+        {
+          "name": "cards-listing",
+          "instances": [
+            "main div[data-testid=\"plp-result\"]",
+            "#mainContent-discovery-ui"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "sec-plp-header",
+          "name": "Listing header",
+          "selector": "#__next > div > main > div.full-bleed",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "main nav[aria-label=\"Breadcrumbs\"]",
+            "main div[data-testid=\"plp-header\"]"
+          ]
+        },
+        {
+          "id": "sec-plp-result",
+          "name": "Product listing",
+          "selector": "#mainContent-discovery-ui",
+          "style": null,
+          "blocks": [
+            "cards-listing"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
       "name": "product-page",
       "urls": [
         "https://www.kmart.com.au/product/larvik-1200mm-2-drawer-desk-oakwhite-desks-tables-and-workstations-110068089/",

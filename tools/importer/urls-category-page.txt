@@ -1,0 +1,2 @@
+http://localhost:8787/category/home-and-living/furniture/
+http://localhost:8787/category/home-and-living/office-furniture/
